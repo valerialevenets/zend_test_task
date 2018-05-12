@@ -7,11 +7,8 @@
 
 namespace Application;
 
-use Zend\EventManager\Event;
-use Zend\I18n\Translator\Translator;
 use Zend\ModuleManager\ModuleManager;
 use Zend\Mvc\MvcEvent;
-use Zend\ServiceManager\ServiceManager;
 
 class Module
 {
@@ -24,10 +21,8 @@ class Module
 
     public function init(ModuleManager $manager)
     {
-        // Получаем менеджер событий.
         $eventManager = $manager->getEventManager();
         $sharedEventManager = $eventManager->getSharedManager();
-        // Регистрируем метод-обработчик.
         $sharedEventManager->attach(__NAMESPACE__, 'dispatch',
             [$this, 'onDispatch'], 100);
     }

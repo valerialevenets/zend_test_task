@@ -34,16 +34,7 @@ return [
                     ],
                 ],
             ],
-            'meow' => [
-                'type' => Literal::class,
-                'options' => [
-                    'route'    => '/meow',
-                    'defaults' => [
-                        'controller' => Controller\IndexController::class,
-                        'action'     => 'index',
-                    ],
-                ],
-            ],
+
 
         ],
     ],
